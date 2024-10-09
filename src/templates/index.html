@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Prediction</title>
+</head>
+<body>
+    <h1>Admission Prediction Form</h1>
+    <form action="/predict" method="post">
+        <label for="gender">Gender:</label>
+        <select name="gender" id="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br>
+
+        <label for="international">International:</label>
+        <select name="international" id="international">
+            <option value="True">Yes</option>
+            <option value="False">No</option>
+        </select><br>
+
+        <label for="gpa">GPA:</label>
+        <input type="number" step="0.01" name="gpa" id="gpa" required><br>
+
+        <label for="major">Major:</label>
+        <select name="major" id="major">
+            <option value="Business">Business</option>
+            <option value="Humanities">Humanities</option>
+            <option value="STEM">STEM</option>
+        </select><br>
+
+        <label for="race">Race:</label>
+        <select name="race" id="race">
+            <option value="White">White</option>
+            <option value="Black">Black</option>
+            <option value="Asian">Asian</option>
+            <option value="Hispanic">Hispanic</option>
+            <option value="International">International</option>
+            <option value="Other">Other</option>
+        </select><br>
+
+        <label for="gmat">GMAT:</label>
+        <input type="number" name="gmat" id="gmat" required><br>
+
+        <label for="work_exp">Work Experience (years):</label>
+        <input type="number" name="work_exp" id="work_exp" required><br>
+
+        <label for="work_industry">Work Industry:</label>
+        <select name="work_industry" id="work_industry">
+            <option value="Financial Services">Financial Services</option>
+            <option value="Investment Management">Investment Management</option>
+            <option value="Technology">Technology</option>
+            <option value="Consulting">Consulting</option>
+            <option value="Nonprofit/Gov">Nonprofit/Gov</option>
+            <option value="PE/VC">PE/VC</option>
+            <option value="Health Care">Health Care</option>
+            <option value="Investment Banking">Investment Banking</option>
+            <option value="Retail">Retail</option>
+            <option value="Energy">Energy</option>
+            <option value="CPG">CPG</option>
+            <option value="Real Estate">Real Estate</option>
+            <option value="Media/Entertainment">Media/Entertainment</option>
+            <option value="Other">Other</option>
+        </select><br>
+
+        <input type="submit" value="Predict Admission">
+    </form>
+</body>
+</html>
